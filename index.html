@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verse Randomizer App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        #verse {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="verse">Click "Next" to see a verse.</div>
+        <button onclick="nextVerse()">Next</button>
+    </div>
+
+    <script>
+        const verses = [
+            "The Lord is my shepherd; I shall not want. - Psalm 23:1",
+            "I can do all things through Christ who strengthens me. - Philippians 4:13",
+            "For I know the plans I have for you, declares the Lord. - Jeremiah 29:11",
+            "The Lord is my light and my salvation; whom shall I fear? - Psalm 27:1",
+            "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness. - Galatians 5:22",
+            "The steadfast love of the Lord never ceases; his mercies never come to an end. - Lamentations 3:22"
+        ];
+
+        function nextVerse() {
+            const randomIndex = Math.floor(Math.random() * verses.length);
+            document.getElementById("verse").innerText = verses[randomIndex];
+        }
+    </script>
+</body>
+</html>
